@@ -1,0 +1,35 @@
+<div class="layout">
+    <div>
+            <h2>todos los productos</h2>
+    </div>
+    
+    <div>
+    
+      
+    </div>
+    
+    </div>
+
+
+
+
+
+{{#each products}}
+
+<div class="card mt-5">
+    <div class="card-header">
+        
+    </div>
+    <div class="card-body">
+      <a href="/products/{{id}}">
+        <h5 class="card-title">{{name}}</h5>
+        <img src="{{image}}" class="card-img-top" alt="image">
+        <p class="card-text">Precio: {{price}}</p>
+
+        <div class="layout">
+
+        </div>
+      </a>
+    </div> 
+</div>
+{{/each}}

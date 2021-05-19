@@ -19,7 +19,14 @@ const userSchema = new Schema(
     passwordHash: {
       type: String,
       required: [true, 'Password is required']
-    }
+    },
+    role: {
+      type: String,
+      trim: true,
+      enum: ['admin', 'user'],
+      default: 'user'
+    },
+    cart: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
   },
   {
     timestamps: true

@@ -15,6 +15,8 @@ require('./configs/db.config');
 // Routers
 const indexRouter = require('./routes/index.routes');
 const authRouter = require('./routes/auth.routes')
+const adminRouter = require('./routes/admin.routes')
+const productsRouter = require('./routes/products.routes')
 
 const app = express();
 
@@ -47,6 +49,8 @@ app.use(function(req, res, next){
 // Routes middleware
 app.use('/', indexRouter);
 app.use('/', authRouter)
+app.use('/', adminRouter)
+app.use('/', productsRouter)
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => next(createError(404)));

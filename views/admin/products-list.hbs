@@ -1,0 +1,40 @@
+<div class="layout">
+    <div>
+            <h2>todos los productos</h2>
+    </div>
+    
+    <div>
+    
+        <a type="button" href="/product/create" class="btn btn-dark btn-lg">Crear producto</a>
+    </div>
+    
+    </div>
+
+
+
+
+
+{{#each products}}
+
+<div class="card mt-5">
+    <div class="card-header">
+        
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">Descripción: {{description}}</p>
+        <img src="{{image}}" class="card-img-top" alt="image">
+        <p class="card-text">Precio: {{price}}</p>
+        <p class="card-text">Categoría: {{category}}</p>
+
+        <div class="layout">
+            <a href="/product/{{_id}}/edit" style="font-size: 20px;">Editar</a>
+        
+        
+        
+            <a href="/product/{{_id}}/delete" style="font-size: 20px;">Eliminar</a>
+        </div>
+
+    </div>
+</div>
+{{/each}}
