@@ -6,40 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/stylesheets/style.css" />
     
   </head>
-
+  
   <body>
-    <nav>
-      <ul>
-        <li id="to-right">
-           
-          </li>
-        {{#if currentUser}}
-          <li id="to-right">
-            <a href="/products/cart"><i class="bi bi-cart-fill">{{productsNumb}}</i></a> <span> | </span>
-          </li>
-          <li id="to-right" style="display: flex; padding:0px; align-items: center;">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Astro store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-4">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/products/telescopio">Telescopios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/products/regalo">Regalos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/products/binoculares">Binoculares</a>
+        </li>
+      </ul>
+      <ulclass="navbar-nav me-auto mb-2 mb-lg-4">
+        <li class="nav-item">
+          {{#if currentUser}}
+          
+            <a href="/products/cart"><i class="bi bi-cart-fill">{{productsNumb}}</i></a> |
+          
+          
             <h1 style="margin:0; padding: 0 10px;">Hola {{currentUser.username}}!</h1>
             <form id="logout-form" action="/logout" method="POST" style="width: 200px; margin:0">
               <button style="margin:0px">Logout</button>
             </form>
-          </li>
+          
           {{else}}
-          <li id="to-right">
-            <a href="/signup">Signup</a> <span> | </span>
-            <a href="/login">Login</a>
-          </li>
+          
         {{/if}}
+        </li>
+        
+        <li class="nav-item">
+
+          <a href="/signup">Signup</a> <span> | </span>
+            <a href="/login">Login</a>
+        </li>
+        
+
       </ul>
-    </nav>
+      
+    </div>
+  </div>
+</nav>
+
 
     {{{body}}}
 
     <script src="/javascripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
   </body>
 
 </html>
