@@ -1,6 +1,6 @@
-<h2>Crear nuevo producto</h2>
+<h2 class="mt-5">Editar producto</h2>
 
-<div class="card mt-5">
+<div class="card mt-1">
     <div class="card-header">
       <form action="/product/{{product._id}}/edit" method="post">
         <div class="mb-3">
@@ -20,12 +20,25 @@
           <label for="Precio" class="form-label">Precio</label>
           <input type="number" class="form-control" name="price" value="{{product.price}}">
         </div>
-        <div class="mb-3">
+        {{!-- <div class="mb-3">
           <label for="Categoria" class="form-label">Categoría</label>
           <input type="text" class="form-control" name="category" value="{{product.category}}">
+        </div> --}}
+        <div class="mb-3">
+          <label for="Categoria" class="form-label">Categorías</label>
+          <select name="category" id="Categoria" class="form-control">
+            <option value="telescopio" {{#ifEquals product.category "telescopio"}}
+    selected
+{{/ifEquals}}>Telescopio</option>
+            <option value="taza" {{#ifEquals product.category "taza"}}
+    selected
+{{/ifEquals}}>Taza</option>
+            <option value="playera" {{#ifEquals product.category "playera"}}
+    selected
+{{/ifEquals}}>Playera</option>
+          </select>
         </div>
-
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary mt-3">Actualizar</button>
       </form>
     </div>
 </div>

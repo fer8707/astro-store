@@ -1,6 +1,6 @@
 <div class="layout">
     <div>
-            <h2>todos los productos</h2>
+            <h2 class="mt-5">Productos disponibles:</h2>
     </div>
     
     <div>
@@ -13,7 +13,7 @@
 
 
 
-
+<div class="d-flex flex-wrap justify-content-between">
 {{#each products}}
 
 {{!-- <div class="card mt-5">
@@ -33,12 +33,15 @@
     </div> 
 </div> --}}
 <a href="/products/{{id}}">
-<div class="card border-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">{{name}}</div>
+<div class="card border-primary mt-4 ml-2 mr-2" style="max-width: 20rem;">
+  <h4 class="card-header mt-3 text-info">{{name}}</h4>
   <div class="card-body">
     <img src="{{image}}" class="card-img-top" alt="image">
-    <h4 class="card-title">Precio: {{price}}</h4>
+    <div class="d-flex justify-content-center">
+    <p class="card-title mt-3 text-warning">Precio: ${{price}}</p>
+    </div>
   </div>
 </div>
 </a>
 {{/each}}
+</div>
