@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap-icons": "^1.5.0",
     "connect-mongo": "^4.4.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.2.0",
@@ -20,7 +21,8 @@
     "http-errors": "^1.7.3",
     "mongoose": "^5.7.13",
     "morgan": "^1.9.1",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "stripe": "^8.148.0"
   },
   "devDependencies": {
     "@ironh/eslint-config": "0.0.2",

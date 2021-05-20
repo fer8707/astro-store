@@ -56,7 +56,8 @@ router.post('/signup', (req, res, next) => {
         })
         .then(userFromDB => {
             console.log("Usuario creado:", userFromDB)
-            res.redirect('/userProfile')
+            setTimeout(()=>{ res.render('auth/login', {errorMessage: "Usuario creado con éxito, haz login por favor"}) }, 1000);
+            
             return
         })
         .catch(error => {
@@ -70,11 +71,6 @@ router.post('/signup', (req, res, next) => {
                 console.log(error)
             }
     })
-})
-
-// GET Profile Page 
-router.get('/userProfile', (req, res) => {
-    res.render('users/user-profile', {userInSession: req.session.currentUser})
 })
 
 //////////// L O G I N ///////////
@@ -112,7 +108,8 @@ router.post('/login', (req, res, next) => {
                     
                     // LOGIN EXITOSO - GUARDAR SESIÓN EN COOKIE Y REDIRIGIR AL PERFIL
                     req.session.currentUser = usuarioEncontrado
-                    res.redirect('/userProfile')
+                    req.session.productsNumb = req.session.currentUser.cart.length
+                    res.redirect('/')
                 } else {
                     res.render('auth/login', {errorMessage: 'Password Incorrecto'} )
                 }
@@ -127,16 +124,6 @@ router.post('/logout', (req, res) => {
     res.redirect('/');
 });
 
-
-// RUTA PRIVADA
-router.get('/private', (req, res) => {
-    const user = req.session.currentUser
-    if(!user){
-        res.redirect("/login")
-        return
-    }
-    res.render('private', {userInSession: req.session.currentUser})
-})
 
 
 

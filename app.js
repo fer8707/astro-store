@@ -42,7 +42,9 @@ const app_name = require('./package.json').name;
 
 // MIDDLEWARE DE SESIÓN
 app.use(function(req, res, next){
-  res.locals.currentUser = req.session.currentUser; // {username: "Ejemplo"}
+  res.locals.currentUser = req.session.currentUser;
+  res.locals.productsNumb = req.session.productsNumb
+  res.locals.total = req.session.total
   next();
 });
 
@@ -51,6 +53,7 @@ app.use('/', indexRouter);
 app.use('/', authRouter)
 app.use('/', adminRouter)
 app.use('/', productsRouter)
+app.use(express.static('.'));
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => next(createError(404)));
