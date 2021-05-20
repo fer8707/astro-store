@@ -19,3 +19,16 @@
         <a href="/products/{{product.category}}" style="font-size: 20px;">Atras</a>
     </div>               
 </div>
+{{product.category}}
+<div class="card border-primary mb-3" style="max-width: 40rem;">
+  <div class="card-header">{{product.name}}</div>
+  <div class="card-body">
+    <img src="{{product.image}}" class="card-img-top" alt="image">
+    <h4 class="card-title">Precio: {{product.price}}</h4>
+    <p class="card-text">{{product.description}}</p>
+    <form action="/products/addToCart/{{product.id}}" method="POST">
+    <button type="submit" class="btn btn-secondary">Agregar al carrito</button>
+    </form>
+  </div>
+</div>
+<a href="/products/{{product.category}}" style="font-size: 20px;">Atras</a>

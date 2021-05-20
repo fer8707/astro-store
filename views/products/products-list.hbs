@@ -16,7 +16,7 @@
 
 {{#each products}}
 
-<div class="card mt-5">
+{{!-- <div class="card mt-5">
     <div class="card-header">
         
     </div>
@@ -31,5 +31,14 @@
         </div>
       </a>
     </div> 
+</div> --}}
+<a href="/products/{{id}}">
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header">{{name}}</div>
+  <div class="card-body">
+    <img src="{{image}}" class="card-img-top" alt="image">
+    <h4 class="card-title">Precio: {{price}}</h4>
+  </div>
 </div>
+</a>
 {{/each}}

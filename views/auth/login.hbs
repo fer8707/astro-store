@@ -2,17 +2,18 @@
 
 <div id="form">
   <h2>Login</h2>
+  <div class="form-grup">
   <form action="/login" method="POST">
-    <label for="input-email"class="form-label">Email</label>
-    <input type="email" id="input-email" name="email" placeholder="Your email" />
+    <label for="input-email"class="form-label mt-4">Email</label>
+    <input type="email" class="form-control" id="input-email" name="email" placeholder="Your email" />
 
     <label for="input-password"class="form-label">Password</label>
-    <input type="password" name="password" id="input-password" placeholder="********" />
+    <input type="password" class="form-control" name="password" id="input-password" placeholder="********" />
 
-    <button type="submit">Login</button>
-
+    <button type="submit" class="btn btn-light">Login</button>
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
+  </div>
 </div>

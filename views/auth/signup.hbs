@@ -1,18 +1,20 @@
 {{!-- views/auth/signup.hbs --}}
 <div id="signup">
+  <div class="form-group row">
+    <div class="form-group">
   <h2>Signup</h2>
   <form action="/signup" method="POST">
-    <label for="input-username" class="form-label"> Username </label>
-    <input type="text" name="username" placeholder="Your username" />
+    <label for="input-username" class="form-label mt-4"> Username </label>
+    <input type="text" class="form-control" name="username" placeholder="Your username" />
 
     <label for="input-email" class="form-label"> Email </label>
-    <input type="email" id="input-email" name="email" placeholder="Your email" />
+    <input type="email" class="form-control" id="input-email" name="email" placeholder="Your email" />
 
 
-    <label for="input-password"class="form-label"> Password </label>
-    <input type="password" name="password" id="input-password" placeholder="********" />
+    <label for="input-password" class="form-label mt-4"> Password </label>
+    <input type="password" class="form-control" name="password" id="input-password" placeholder="********" />
 
-    <button type="submit">Create account</button>
+    <button type="submit" class="btn btn-light">Crear cuenta</button>
 
     {{!-- error message will be added here --}}
 
@@ -22,4 +24,6 @@
 
 
   </form>
+  </div>
+  </div>
 </div>
