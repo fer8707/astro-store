@@ -22,7 +22,9 @@ const app = express();
 
 // MIDDLEWARE DE SESIÓN
 require('./configs/session.config')(app)
-
+hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+  return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
 // Express View engine setup
 
 app.set('views', path.join(__dirname, 'views'));

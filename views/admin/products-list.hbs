@@ -1,11 +1,11 @@
 <div class="layout">
     <div>
-            <h2>todos los productos</h2>
+            <h2 class="mt-5">Todos los productos</h2>
     </div>
     
-    <div>
+    <div class="mt-4">
     
-        <a type="button" href="/product/create" class="btn btn-dark btn-lg">Crear producto</a>
+        <a type="button" href="/product/create" class="btn btn-outline-success">Crear producto</a>
     </div>
     
     </div>
@@ -13,10 +13,10 @@
 
 
 
-
+<div class="d-flex flex-wrap justify-content-between">
 {{#each products}}
 
-<div class="card mt-5">
+{{!-- <div class="card mt-5">
     <div class="card-header">
         
     </div>
@@ -36,5 +36,24 @@
         </div>
 
     </div>
+</div> --}}
+
+<div class="card border-primary mt-4 ml-2 mr-2" style="max-width: 20rem;">
+  <div class="card-body">
+    <img src="{{image}}" class="card-img-top mb-3" alt="image">
+    <p class="card-text">Nombre: {{name}}</p>
+     <p class="card-text">Descripción: {{description}}</p>
+     <p class="card-text">Precio: {{price}}</p>
+     <p class="card-text">Categoría: {{category}}</p>
+    <div class="d-flex justify-content-center">
+        <div class="m-2 mt-0 mb-0">
+        <a class="btn btn-outline-warning" href="/product/{{_id}}/edit" style="font-size: 15px;">Editar</a>
+        </div>
+        <div class="m-2 mt-0 mb-0">
+        <a class="d-block btn btn-outline-danger ml-5" href="/product/{{_id}}/delete" style="font-size: 15px;">Eliminar</a>
+        </div>
+    </div>
+  </div>
 </div>
 {{/each}}
+</div>

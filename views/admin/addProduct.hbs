@@ -1,6 +1,6 @@
-<h2>Crear nuevo producto</h2>
+<h2 class="mt-5">Crear nuevo producto</h2>
 
-<div class="card mt-5">
+<div class="card mt-1">
     <div class="card-header">
       <form action="/product/create" method="post">
         <div class="mb-3">
@@ -20,12 +20,20 @@
           <label for="Precio" class="form-label">Precio</label>
           <input type="number" class="form-control" name="price">
         </div>
-        <div class="mb-3">
+        {{!-- <div class="mb-3">
           <label for="Categoria" class="form-label">Categoría</label>
           <input type="text" class="form-control" name="category">
+        </div> --}}
+                <div class="mb-3">
+          <label for="Categoria" class="form-label">Categorías</label>
+          <select name="category" id="Categoria" class="form-control">
+            <option selected hidden></option>
+            <option value="telescopio">Telescopio</option>
+            <option value="taza">Taza</option>
+            <option value="playera">Playera</option>
+          </select>
         </div>
-
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary mt-3">Guardar</button>
       </form>
     </div>
 </div>

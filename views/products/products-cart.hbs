@@ -1,6 +1,6 @@
 <div class="layout">
     <div>
-            <h2>todos los productos</h2>
+            <h2 class="mt-5 mb-3">Tu carrito de compras:</h2>
     </div>
 </div>
 
@@ -10,7 +10,7 @@
 
 {{#each products}}
 
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card border-primary mb-3 p-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{image}}" class="card-img-top" alt="image">
@@ -19,7 +19,7 @@
       <div class="card-body">
         <h5 class="card-title">{{name}}</h5>
         <p class="card-text">{{description}}</p>
-        <h2><p class="card-text"><small class="text-secondary">{{price}}</small></p></h2>
+        <h2><p class="card-text"><small class="text-secondary">Precio: ${{price}}</small></p></h2>
       </div>
     </div>
   </div>
@@ -27,11 +27,13 @@
 
 {{/each}}
 </div>
-<div>
-<h1>Total: {{total}}</h1>
+<div class="card border-primary p-4">
+<h1 class="text-success">Total: ${{total}}</h1>
+<div class="d-flex justify-content-center">
 <a href="/products/checkout">
-<button type="button" class="btn btn-primary">pagar ahora</button>
+<button type="button" class="btn btn-warning">Pagar ahora</button>
 </a>
+</div>
 </div>
 </div>
 </div>
