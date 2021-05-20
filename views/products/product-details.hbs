@@ -3,22 +3,7 @@
 </div>
 
 
-<div class="card mt-5">
-    <div class="card-header">
-        {{product.category}}
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">Descripción: {{product.description}}</p>
-        <img src="{{product.image}}" class="card-img-top" alt="image">
-        <p class="card-text">Precio: {{product.price}}</p>
-        {{!-- <a href="/products/{{product.category}}" style="font-size: 20px;">Agregar al carrito</a> --}}
-        <form action="/products/addToCart/{{product.id}}" method="POST">
-            <button type="submit">Agregar al carrito</button>
-        </form>
-        <a href="/products/{{product.category}}" style="font-size: 20px;">Atras</a>
-    </div>               
-</div>
+
 {{product.category}}
 <div class="card border-primary mb-3" style="max-width: 40rem;">
   <div class="card-header">{{product.name}}</div>

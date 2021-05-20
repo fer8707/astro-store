@@ -15,6 +15,20 @@ router.get('/products/telescopio', (req, res, next) => {
     })
   }).catch((error) => next(error))
 })
+router.get('/products/taza', (req, res, next) => {
+  Product.find({category:"taza"}).then(products => {
+    res.render('products/products-list', {
+      products: products
+    })
+  }).catch((error) => next(error))
+})
+router.get('/products/playera', (req, res, next) => {
+  Product.find({category:"playera"}).then(products => {
+    res.render('products/products-list', {
+      products: products
+    })
+  }).catch((error) => next(error))
+})
 
 
 
